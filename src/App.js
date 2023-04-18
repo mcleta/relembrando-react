@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Routes, Route, Link} from 'react-router-dom';
+import ColorR from './components/ColorR';
+import ColorG from './components/ColorG';
+import ColorB from './components/ColorB';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <div clas="btn-nav">
+          <Link to='/ColorR'>ColorR</Link>
+        </div>
+        <div clas="btn-nav">
+          <Link to='/ColorG'>ColorG</Link>
+        </div>
+        <div clas="btn-nav">
+          <Link to='/ColorB'>ColorB</Link>
+        </div>
       </header>
-    </div>
+      <main>
+        <Routes>
+          <Route path='/colorR' element= {<ColorR/>}/>
+          <Route path='/colorG' element= {<ColorG/>}/>
+          <Route path='/colorB' element= {<ColorB/>}/>
+        </Routes>
+      </main>
+    </>
   );
 }
 
